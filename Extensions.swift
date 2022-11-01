@@ -44,3 +44,27 @@ extension KVTextField {
    }
 
 }
+
+
+
+extension UITextField {
+   func setCustomPlaceholder(text: String) {
+      self.attributedPlaceholder = NSAttributedString(
+          string: text,
+          attributes: [NSAttributedString.Key.foregroundColor: UIColor.color(hex: "#9AA5B4")]
+      )
+   }
+}
+
+extension UIView {
+   func showError() {
+      self.layer.borderColor     = UIColor.color(hex: "#ED5051").cgColor
+      self.layer.borderWidth     = 1
+      self.layer.backgroundColor = UIColor.red.cgColor.copy(alpha: 0.03)
+   }
+   
+   func removeErrors() {
+      self.backgroundColor = UIColor.color(hex: "#f8f8f8")
+      self.layer.borderColor = UIColor.color(hex: "#EBEDF1").cgColor
+   }
+}
